@@ -10,16 +10,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class TransactionListener {
 
-    private final TransactionService transactionService;
+    // private final TransactionService transactionService;
 
-    @Autowired
-    public TransactionListener(TransactionService transactionService) {
-        this.transactionService = transactionService;
-    }
+    // @Autowired
+    // public TransactionListener(TransactionService transactionService) {
+    // this.transactionService = transactionService;
+    // }
 
     @KafkaListener(topics = "${general.kafka-topic}", groupId = "midas-core")
     public void listen(Transaction transaction) {
         // transactionService.processTransaction(transaction);
+        transaction.getAmount();
 
     }
 }
