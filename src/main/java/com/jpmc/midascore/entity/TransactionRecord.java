@@ -8,6 +8,7 @@ public class TransactionRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private double amount;
+    private double incentiveAmount;
 
     @ManyToOne
     @JoinColumn(name = "sender_id", nullable = false)
@@ -20,9 +21,10 @@ public class TransactionRecord {
     public TransactionRecord() {
     }
 
-    public TransactionRecord(double amount, UserRecord sender, UserRecord recipient) {
+    public TransactionRecord(double amount, UserRecord sender, UserRecord recipient, double incentiveAmount) {
         this.amount = amount;
         this.sender = sender;
         this.recipient = recipient;
+        this.incentiveAmount = incentiveAmount;
     }
 }

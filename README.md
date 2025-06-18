@@ -21,9 +21,15 @@ mvn -Dtest=com.jpmc.midascore.TaskThreeTests test
 
 ```
 
+Test4
+```
+mvn -Dtest=com.jpmc.midascore.TaskFourTests test
+```
+
 Test5
 ```
 mvn -Dtest=com.jpmc.midascore.TaskFiveTests test
+```
 
 
 # set up 
